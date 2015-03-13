@@ -2,4 +2,6 @@ org.layo.calc
 org.layo.calc.command
 org.layo.calc.db
 org.layo.calc.eval
+org.layo.calc.operators
+org.layo.calc.operators.impl
 org.layo.calc.ui
