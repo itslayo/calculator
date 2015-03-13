@@ -28,7 +28,7 @@ public class Parser {
     }
 
     /**
-     * Start parsing method
+     * Main method that starts parsing
      */
     double parse() {
         eatChar();

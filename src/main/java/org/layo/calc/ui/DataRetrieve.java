@@ -39,9 +39,6 @@ public class DataRetrieve extends JFrame {
         selectExpr.addActionListener(new ChooseListItemListener());
     }
 
-    /**
-     * ActionListener for ChooseItem button
-     */
     class ChooseListItemListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
