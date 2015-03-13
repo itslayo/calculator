@@ -13,6 +13,9 @@ public class DBConnect {
     private static Connection conn;
     private static Statement st;
 
+    /**
+     * Static block for connection to DB
+     */
     static {
         try {
             Class.forName("org.h2.Driver").newInstance();
@@ -29,6 +32,11 @@ public class DBConnect {
         }
     }
 
+    /**
+     * Creating DB if not exists
+     * Inserting new expression values into DB
+     * @param expr - String expression
+     */
     public static void updateDB(String expr) {
         try {
             st.execute("CREATE TABLE IF NOT EXISTS expressions (expression VARCHAR(255))");
@@ -42,6 +50,10 @@ public class DBConnect {
         }
     }
 
+    /**
+     * Retrieve all expressions from DB
+     * @return DefaultListModel to build JList
+     */
     public static DefaultListModel retrieveFromDB(){
         List<String> resultList = new ArrayList<String>();
         ResultSet result;
@@ -51,7 +63,6 @@ public class DBConnect {
             while (result.next()) {
                 String exprFromDB = result.getString("expression");
                 resultList.add(exprFromDB);
-                System.out.println(exprFromDB);
                 listModel.addElement(exprFromDB);
             }
         }catch (SQLException ex){

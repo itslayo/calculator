@@ -27,6 +27,10 @@ public class DataRetrieve extends JFrame {
         btnPanel.add(selectExpr);
     }
 
+    /**
+     * Init components for JFrame
+     * @param listModel
+     */
     private void initComponents(DefaultListModel listModel){
         list = new JList(listModel);
         scrollPane = new JScrollPane(list);
@@ -35,13 +39,15 @@ public class DataRetrieve extends JFrame {
         selectExpr.addActionListener(new ChooseListItemListener());
     }
 
+    /**
+     * ActionListener for ChooseItem button
+     */
     class ChooseListItemListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             String selectedExpr = list.getSelectedValue();
             Calc mainFrame = Calc.getInstance();
             mainFrame.setExprTextField(selectedExpr);
-            mainFrame.setResultTextField("");
             dispose();
         }
     }

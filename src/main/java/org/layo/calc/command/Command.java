@@ -4,5 +4,5 @@ package org.layo.calc.command;
  * Created by Layo on 12.03.2015.
  */
 public interface Command {
-    public String execute();
+    public double execute();
 }

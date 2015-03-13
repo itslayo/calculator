@@ -14,8 +14,12 @@ public class EvaluateCommand implements Command {
         this.expr = expr;
     }
 
+    /**
+     * Building pattern Command
+     * Executing method evalExpression from class Evaluate
+     */
     @Override
-    public String execute() {
+    public double execute() {
         return evaluate.evalExpression(expr);
     }
 }
